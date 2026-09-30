@@ -400,12 +400,14 @@ There is no auto-detection. Naming your backend explicitly is what replaced it.
 
 ### Available Backends
 
-| Multiplexer | Backend                                                                                         | Maintainer  |
-| ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
-| Zellij      | [smart-splits-backend-zellij](https://github.com/smart-splits-nvim/smart-splits-backend-zellij) | @Torsteinws |
-| Ghostty     | [backend-ghostty](https://github.com/smart-splits-nvim/backend-ghostty)                         | @geodimm    |
+| Multiplexer | Backend                                                                                         | Maintainer   |
+| ----------- | ----------------------------------------------------------------------------------------------- | ------------ |
+| Zellij      | [backend-zellij](https://github.com/smart-splits-nvim/smart-splits-backend-zellij)              | @Torsteinws  |
+| Ghostty     | [backend-ghostty](https://github.com/smart-splits-nvim/backend-ghostty)                         | @geodimm     |
+| Tmux        | [backend-tmux](https://github.com/smart-splits-nvim/backend-tmux)                               | @mrjones2014 |
+| Kitty       | [backend-kitty](https://github.com/smart-splits-nvim/backend-kitty)                             | @maatthc     |
 
-Using tmux, WezTerm, Kitty or Herdr? Those backends shipped in core through v2 and need maintainers.
+Using WezTerm or Herdr? Those backends shipped in core through v2 and need maintainers.
 Either stay on the `v2` tag, or [volunteer to maintain one](https://github.com/mrjones2014/smart-splits.nvim/issues/488).
 
 The community is also free to make 3rd party backends.
