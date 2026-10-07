@@ -47,7 +47,7 @@
 ## Requirements
 
 - Neovim 0.11 or newer
-- (Optional) A terminal multiplexer with a supported `smart-splits` backend plugin (e.g. `smart-splits-nvim/backend-zellij`)
+- (Optional) A terminal multiplexer with a supported `smart-splits` backend plugin (e.g. `smart-splits-nvim/backend-zellij-lua`)
 
 ## Installation
 
@@ -62,15 +62,15 @@ return {
   -- optional: install a backend
   dependencies = {
     {
-      'smart-splits-nvim/backend-zellij',
-      main = 'smart-splits-backend-zellij',
+      'smart-splits-nvim/backend-zellij-lua',
+      main = 'smart-splits-backend-zellij-lua',
       opts = {
         --[[ backend-specific options go here ]]
       },
     },
   },
   opts = {
-    mux = { backend = 'smart-splits-backend-zellij' },
+    mux = { backend = 'smart-splits-backend-zellij-lua' },
   },
 }
 ```
@@ -89,10 +89,10 @@ return {
   'smart-splits-nvim/smart-splits.nvim',
   version = '^3.0.0',
   dependencies = {
-    { 'smart-splits-nvim/backend-zellij', main = 'smart-splits-backend-zellij' },
+    { 'smart-splits-nvim/backend-zellij-lua', main = 'smart-splits-backend-zellij-lua' },
   },
   opts = {
-    mux = { backend = 'smart-splits-backend-zellij' },
+    mux = { backend = 'smart-splits-backend-zellij-lua' },
   },
   keys = {
     -- Resize splits
@@ -385,14 +385,14 @@ return {
   'smart-splits-nvim/smart-splits.nvim',
   dependencies = {
     {
-      'smart-splits-nvim/backend-zellij',
-      main = 'smart-splits-backend-zellij',
+      'smart-splits-nvim/backend-zellij-lua',
+      main = 'smart-splits-backend-zellij-lua',
       -- backend options belong to the backend plugin
       opts = { disable_nav_when_zoomed = true },
     },
   },
   opts = {
-    mux = { backend = 'smart-splits-backend-zellij' },
+    mux = { backend = 'smart-splits-backend-zellij-lua' },
   },
 }
 ```
@@ -403,7 +403,7 @@ There is no auto-detection. Naming your backend explicitly is what replaced it.
 
 | Multiplexer | Backend                                                                  | Maintainer   | Notes                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Zellij      | [backend-zellij](https://github.com/smart-splits-nvim/backend-zellij)    | @Torsteinws  | A Rust rewrite, [backend-zellij-rs](https://github.com/smart-splits-nvim/backend-zellij-rs), is in progress and will become the recommended Zellij backend once stable |
+| Zellij      | [backend-zellij-lua](https://github.com/smart-splits-nvim/backend-zellij-lua)    | @Torsteinws  | A Rust rewrite, [backend-zellij-rs](https://github.com/smart-splits-nvim/backend-zellij-rs), is in progress and will become the recommended Zellij backend once stable |
 | Ghostty     | [backend-ghostty](https://github.com/smart-splits-nvim/backend-ghostty)  | @geodimm     | macOS only                                                                                                                                                     |
 | Tmux        | [backend-tmux](https://github.com/smart-splits-nvim/backend-tmux)        | @mrjones2014 |                                                                                                                                                                |
 | Kitty       | [backend-kitty](https://github.com/smart-splits-nvim/backend-kitty)      | @maatthc     |                                                                                                                                                                |
@@ -423,7 +423,7 @@ wins, which covers the case where you are usually in one multiplexer and occasio
 require('smart-splits').setup({
   mux = {
     -- inside zellij, use zellij; otherwise fall back to ghostty
-    backend = { 'smart-splits-backend-zellij', 'smart-splits-backend-ghostty' },
+    backend = { 'smart-splits-backend-zellij-lua', 'smart-splits-backend-ghostty' },
   },
 })
 ```
@@ -435,7 +435,7 @@ defers the `require` until startup, which helps if your backend plugin is lazy l
 require('smart-splits').setup({
   mux = {
     backend = function()
-      return { require('smart-splits-backend-zellij'), require('smart-splits-backend-ghostty') }
+      return { require('smart-splits-backend-zellij-lua'), require('smart-splits-backend-ghostty') }
     end,
   },
 })
