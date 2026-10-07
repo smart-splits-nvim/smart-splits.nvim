@@ -89,7 +89,7 @@ return {
   'smart-splits-nvim/smart-splits.nvim',
   version = '^3.0.0',
   dependencies = {
-    'smart-splits-nvim/smart-splits-backend-zellij',
+    { 'smart-splits-nvim/backend-zellij', main = 'smart-splits-backend-zellij' },
   },
   opts = {
     mux = { backend = 'smart-splits-backend-zellij' },
@@ -385,7 +385,8 @@ return {
   'smart-splits-nvim/smart-splits.nvim',
   dependencies = {
     {
-      'smart-splits-nvim/smart-splits-backend-zellij',
+      'smart-splits-nvim/backend-zellij',
+      main = 'smart-splits-backend-zellij',
       -- backend options belong to the backend plugin
       opts = { disable_nav_when_zoomed = true },
     },
@@ -400,15 +401,16 @@ There is no auto-detection. Naming your backend explicitly is what replaced it.
 
 ### Available Backends
 
-| Multiplexer | Backend                                                                                         | Maintainer   |
-| ----------- | ----------------------------------------------------------------------------------------------- | ------------ |
-| Zellij      | [backend-zellij](https://github.com/smart-splits-nvim/smart-splits-backend-zellij)              | @Torsteinws  |
-| Ghostty     | [backend-ghostty](https://github.com/smart-splits-nvim/backend-ghostty)                         | @geodimm     |
-| Tmux        | [backend-tmux](https://github.com/smart-splits-nvim/backend-tmux)                               | @mrjones2014 |
-| Kitty       | [backend-kitty](https://github.com/smart-splits-nvim/backend-kitty)                             | @maatthc     |
+| Multiplexer | Backend                                                                  | Maintainer   | Notes                                                                                                                                                         |
+| ----------- | ------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zellij      | [backend-zellij](https://github.com/smart-splits-nvim/backend-zellij)    | @Torsteinws  | A Rust rewrite, [backend-zellij-rs](https://github.com/smart-splits-nvim/backend-zellij-rs), is in progress and will become the recommended Zellij backend once stable |
+| Ghostty     | [backend-ghostty](https://github.com/smart-splits-nvim/backend-ghostty)  | @geodimm     | macOS only                                                                                                                                                     |
+| Tmux        | [backend-tmux](https://github.com/smart-splits-nvim/backend-tmux)        | @mrjones2014 |                                                                                                                                                                |
+| Kitty       | [backend-kitty](https://github.com/smart-splits-nvim/backend-kitty)      | @maatthc     |                                                                                                                                                                |
+| WezTerm     | [backend-wezterm](https://github.com/smart-splits-nvim/backend-wezterm)  | @a-morales   |                                                                                                                                                                |
 
-Using WezTerm or Herdr? Those backends shipped in core through v2 and need maintainers.
-Either stay on the `v2` tag, or [volunteer to maintain one](https://github.com/mrjones2014/smart-splits.nvim/issues/488).
+Using Herdr? That backend shipped in core through v2 and needs a maintainer.
+Either stay on the `v2` tag, or [volunteer to maintain it](https://github.com/mrjones2014/smart-splits.nvim/issues/488).
 
 The community is also free to make 3rd party backends.
 
@@ -444,7 +446,8 @@ protocol version, or is missing a required field is reported and skipped, and th
 
 ### Writing a Backend
 
-See [`PROTOCOL.md`](./PROTOCOL.md), or `:help smart-splits-protocol`. A backend needs four fields:
+See [`PROTOCOL.md`](./PROTOCOL.md), or `:help smart-splits-protocol`. A backend needs at least four fields
+for basic functionality:
 
 ```lua
 return {
