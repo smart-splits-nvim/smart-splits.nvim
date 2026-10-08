@@ -38,7 +38,7 @@ jobs:
       - name: Generate helptags
         run: nix develop .#ci --command nvim --headless -c 'helptags doc' -c 'qa'
       - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore(ci): auto-generate vimdoc"
           commit_user_name: "github-actions[bot]"
