@@ -11,8 +11,7 @@ updates:
       prefix: chore
       include: scope
     groups:
-      actions-minor-patch:
-        update-types: [minor, patch]
+      patterns: ["*"]
   - package-ecosystem: nix
     directory: /
     schedule:
