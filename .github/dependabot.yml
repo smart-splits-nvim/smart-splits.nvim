@@ -11,7 +11,8 @@ updates:
       prefix: chore
       include: scope
     groups:
-      patterns: ["*"]
+      actions:
+        patterns: ["*"]
   - package-ecosystem: nix
     directory: /
     schedule:
