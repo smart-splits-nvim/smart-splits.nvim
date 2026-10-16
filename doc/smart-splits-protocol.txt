@@ -1,5 +1,5 @@
 *smart-splits-protocol.txt*
-                          For Neovim >= 0.11.0    Last change: 2026 October 08
+                          For Neovim >= 0.11.0    Last change: 2026 October 16
 
 ==============================================================================
 Table of Contents                    *smart-splits-protocol-table-of-contents*

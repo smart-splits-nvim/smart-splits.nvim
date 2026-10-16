@@ -5,6 +5,7 @@ smart-splits-backends-writing-a-backend	smart-splits.txt	/*smart-splits-backends
 smart-splits-commands	smart-splits.txt	/*smart-splits-commands*
 smart-splits-configuration	smart-splits.txt	/*smart-splits-configuration*
 smart-splits-configuration-at-edge-behavior	smart-splits.txt	/*smart-splits-configuration-at-edge-behavior*
+smart-splits-configuration-floating-windows	smart-splits.txt	/*smart-splits-configuration-floating-windows*
 smart-splits-configuration-ignore-lists	smart-splits.txt	/*smart-splits-configuration-ignore-lists*
 smart-splits-installation	smart-splits.txt	/*smart-splits-installation*
 smart-splits-keybindings	smart-splits.txt	/*smart-splits-keybindings*

@@ -1,5 +1,5 @@
 *smart-splits.txt*
-                          For Neovim >= 0.11.0    Last change: 2026 October 08
+                          For Neovim >= 0.11.0    Last change: 2026 October 16
 
 ==============================================================================
 Table of Contents                             *smart-splits-table-of-contents*
@@ -9,6 +9,7 @@ Table of Contents                             *smart-splits-table-of-contents*
 3. Quick Start                                      |smart-splits-quick-start|
 4. Configuration                                  |smart-splits-configuration|
   - Ignore Lists                     |smart-splits-configuration-ignore-lists|
+  - Floating Windows             |smart-splits-configuration-floating-windows|
   - At Edge Behavior             |smart-splits-configuration-at-edge-behavior|
 5. Keybindings                                      |smart-splits-keybindings|
 6. Lua API                                              |smart-splits-lua-api|
@@ -46,6 +47,7 @@ terminal multiplexer panes with a clean, backend-driven architecture.
     - |smart-splits-quick-start|
     - |smart-splits-configuration|
         - |smart-splits-configuration-ignore-lists|
+        - |smart-splits-configuration-floating-windows|
         - |smart-splits-configuration-at-edge-behavior|
     - |smart-splits-keybindings|
     - |smart-splits-lua-api|
@@ -229,6 +231,8 @@ Defaults:
         at_edge = 'wrap',
         -- keep the cursor on the same screen row when moving horizontally
         same_row = false,
+        -- 'previous' | 'mux', see Floating Windows below
+        float = 'previous',
       },
 
       swap = {
@@ -279,6 +283,19 @@ Set `inherit = true` to add to the top level list instead of replacing it:
       resize = { ignored_filetypes = { inherit = true, 'Trouble' } },
     })
 <
+
+
+FLOATING WINDOWS                 *smart-splits-configuration-floating-windows*
+
+Floats have no neighbors, so by default moving out of one first focuses the
+previously focused window and moves from there. That leaves the float, which
+closes floats that close themselves on `WinLeave`, such as a floating terminal.
+Set `move.float = 'mux'` to hand the move straight to the multiplexer backend
+instead, leaving Neovim’s focus untouched. Resizing and swapping always act
+on the previous window.
+
+Floats with a `zindex` below 50 are treated as sidebars and move like regular
+splits either way.
 
 
 AT EDGE BEHAVIOR                 *smart-splits-configuration-at-edge-behavior*
@@ -571,6 +588,7 @@ smart-splits` repeats the report.
   at_edge                       move.at_edge
   move_cursor_same_row          move.same_row
   cursor_follows_swapped_bufs   swap.move_cursor
+  float_win_behavior            move.float
   multiplexer_integration       mux.backend
   log_level                     log.level
   ignored_buftypes              unchanged
@@ -583,9 +601,6 @@ backend-specific configuration.
   -------------------------------------------- ---------------------------------
   disable_multiplexer_nav_when_zoomed          Zoom is handled inside the
                                                backend, configure it there
-
-  float_win_behavior                           Floating windows always act on
-                                               the previous window
 
   wezterm_cli_path, kitty_password,            Moved to their backend plugins
   zellij_move_focus_or_tab
