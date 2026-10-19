@@ -1,5 +1,5 @@
 *smart-splits.txt*
-                          For Neovim >= 0.11.0    Last change: 2026 October 16
+                          For Neovim >= 0.11.0    Last change: 2026 October 19
 
 ==============================================================================
 Table of Contents                             *smart-splits-table-of-contents*
@@ -486,12 +486,18 @@ AVAILABLE BACKENDS                  *smart-splits-backends-available-backends*
 
   WezTerm       backend-wezterm      @a-morales
   ----------------------------------------------------------------------------------------------
-Using Herdr? That backend shipped in core through v2 and needs a maintainer.
-Either stay on the `v2` tag, or volunteer to maintain it
-<https://github.com/mrjones2014/smart-splits.nvim/issues/488>.
 
-The community is also free to make 3rd party backends.
+COMMUNITY BACKENDS ~
 
+The community is free to make 3rd party backends. Below is a list of
+community-maintained backends.
+
+  -----------------------------------------------------------------------------------------------
+  Multiplexer   Backend              Maintainer      Notes
+  ------------- -------------------- --------------- --------------------------------------------
+  Herdr         backend-herdr        @adriankarlen
+
+  -----------------------------------------------------------------------------------------------
 
 MULTIPLE BACKENDS                    *smart-splits-backends-multiple-backends*
 
