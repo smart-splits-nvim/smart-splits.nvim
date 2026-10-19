@@ -422,10 +422,13 @@ There is no auto-detection. Naming your backend explicitly is what replaced it.
 | Kitty       | [backend-kitty](https://github.com/smart-splits-nvim/backend-kitty)      | @maatthc     |                                                                                                                                                                |
 | WezTerm     | [backend-wezterm](https://github.com/smart-splits-nvim/backend-wezterm)  | @a-morales   |                                                                                                                                                                |
 
-Using Herdr? That backend shipped in core through v2 and needs a maintainer.
-Either stay on the `v2` tag, or [volunteer to maintain it](https://github.com/mrjones2014/smart-splits.nvim/issues/488).
+#### Community Backends
 
-The community is also free to make 3rd party backends.
+The community is free to make 3rd party backends. Below is a list of community-maintained backends.
+
+| Multiplexer | Backend                                                                  | Maintainer   | Notes                                                                                                                                                         |
+| ----------- | ------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Herdr       | [backend-herdr](https://github.com/adriankarlen/smart-splits-beckend-herdr) | @adriankarlen |                                                   |
 
 ### Multiple Backends
 
