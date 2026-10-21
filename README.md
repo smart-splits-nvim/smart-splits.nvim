@@ -429,6 +429,7 @@ The community is free to make 3rd party backends. Below is a list of community-m
 | Multiplexer | Backend                                                                  | Maintainer   | Notes                                                                                                                                                         |
 | ----------- | ------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Herdr       | [backend-herdr](https://github.com/adriankarlen/smart-splits-backend-herdr) | @adriankarlen |                                                   |
+| Rex | [backend-rex](https://github.com/rawnly/smart-splits-backend-rex) | @rawnly | 
 
 ### Multiple Backends
 
