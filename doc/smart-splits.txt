@@ -1,5 +1,5 @@
 *smart-splits.txt*
-                          For Neovim >= 0.11.0    Last change: 2026 October 19
+                          For Neovim >= 0.11.0    Last change: 2026 October 21
 
 ==============================================================================
 Table of Contents                             *smart-splits-table-of-contents*
@@ -497,6 +497,7 @@ community-maintained backends.
   ------------- -------------------- --------------- --------------------------------------------
   Herdr         backend-herdr        @adriankarlen
 
+  Rex           backend-rex          @rawnly
   -----------------------------------------------------------------------------------------------
 
 MULTIPLE BACKENDS                    *smart-splits-backends-multiple-backends*
